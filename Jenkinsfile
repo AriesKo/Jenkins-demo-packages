@@ -6,12 +6,12 @@ pipeline {
             steps {
                 deleteDir() // clean up workspace
                 git 'https://github.com/jonasjj/Jenkins-demo-packages'
-                sh 'cd c:ProgramData\Jenkins\.jenkins\workspace\packages\vivado && vivado -mode batch -source create_vivado_proj.tcl'
+                sh 'cd c:ProgramData/Jenkins/.jenkins/workspace/packages/vivado && vivado -mode batch -source create_vivado_proj.tcl'
             }
         }
         stage('Check VHDL syntax') {
             steps {
-                sh 'cd c:ProgramData\Jenkins\.jenkins\workspace\packages\vivado && vivado -mode batch -source check_syntax.tcl'
+                sh 'cd c:ProgramData/Jenkins/.jenkins/workspace/packages/vivado && vivado -mode batch -source check_syntax.tcl'
             }
         }
     }
